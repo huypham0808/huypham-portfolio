@@ -1,0 +1,161 @@
+.myHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 20%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    align-items: center;
+    transition: all 0.3s;
+    border: none;
+}
+
+.myHeader.scrolled {
+    border-bottom: 1px solid #5c5c5c;
+}
+
+.myHeader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    backdrop-filter: blur(50px);
+}
+
+.myHeader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+
+.myHeader a,
+.myFooter a {
+    color: #D2691E;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.myHeader a:hover {
+    color: #fff;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #BC243C;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.myNavbar a {
+    position: relative;
+    font-size: 1.15rem;
+    color: #E15D44;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+
+.myNavbar a::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    left: 0;
+    background-color: #BC243C;
+    transition: width 0.3s ease-in-out;
+}
+
+.myNavbar a:hover,
+.myFooter a:hover {
+    color: #fff;
+}
+
+.myNavbar a:hover::after {
+    width: 100%;
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.icons i {
+    font-size: 2.8rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .myHeader {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+        color: #D2691E;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .myNavbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.myNavbar {
+        height: 20rem;
+    }
+
+    .myNavbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: .3s ease;
+        opacity: 0;
+    }
+
+    #check:checked~.myNavbar a {
+        transform: translateY(0);
+        transition-delay: calc(.15s * var(--i));
+        opacity: 1;
+    }
+}
