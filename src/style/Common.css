@@ -1,0 +1,10 @@
+:root {
+    --main-text-color: #E15D44;
+}
+
+.title {
+    color: var(--main-text-color);
+    font-size: 1.3rem;
+    margin: 10px 0;
+    font-weight: 500;
+}

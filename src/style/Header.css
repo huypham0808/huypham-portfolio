@@ -10,6 +10,7 @@
     align-items: center;
     transition: all 0.3s;
     border: none;
+    background-color: rgb(23 25 35/.9);
 }
 
 .myHeader.scrolled {
