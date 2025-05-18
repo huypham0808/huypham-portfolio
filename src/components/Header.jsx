@@ -14,10 +14,12 @@ const Header = () => {
                 <Link to='/' alt=''>Home</Link>
                 <Link to='/about' alt=''>About</Link>
                 <Link to='/front-end' alt=''>Front End</Link>
-                <Link to='/bim-cad' alt=''>Bim Cad</Link>
+                <Link to='/bim-cad' alt=''>Bim CAD</Link>
                 <Link to='/certificate' alt=''>Certificate</Link>
                 <Link to='/contact' alt=''>Contact</Link>
-                <i class='bx bx-moon' style={{ fontSize: "24px", color: "red", marginLeft: 24, background: "grey", padding: "3px" }} ></i>
+                <button className='change--theme'>
+                    <i className='bx bx-moon'></i>
+                </button>
 
             </nav>
         </header>

@@ -1,5 +1,6 @@
-import Experience from "../../components/Experience";
+// import Experience from "../../components/Experience";
 import MainCarousel from "../../components/MainCarousel";
+import Project from "../../components/Project";
 import Skills from "../../components/Skills";
 import '../../style/Home.css';
 const Home = () => {
@@ -7,7 +8,8 @@ const Home = () => {
         <div className="homePage">
             <MainCarousel />
             <Skills />
-            <Experience />
+            {/* <Experience /> */}
+            <Project />
             <br />
             <br />
             <br />
